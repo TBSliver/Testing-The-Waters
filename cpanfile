@@ -4,3 +4,8 @@ requires 'File::Temp';
 requires 'Test::More';
 requires 'Moo';
 requires 'DBIx::Class::Fixtures';
+requires 'Web::Simple';
+requires 'Config::General';
+requires 'JSON::MaybeXS';
+requires 'LWP::Protocol::PSGI';
+requires 'Test::WWW::Mechanize';
