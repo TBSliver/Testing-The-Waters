@@ -7,4 +7,15 @@ sub index {
   $c->render( text => 'Hello World' );
 }
 
+sub fruit {
+  my $c = shift;
+
+  my $fruit_rs = $c->schema->resultset('Fruit')->search( undef, { order_by => 'id' } );
+  $c->render( json => {
+    fruit => [
+      ( map { { id => $_->id, name => $_->name } } $fruit_rs->all )
+    ],
+  });
+}
+
 1;
